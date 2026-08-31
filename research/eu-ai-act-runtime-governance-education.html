@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the EU AI Act asks of a school, and what it cannot reach</title>
+<meta name="description" content="The EU AI Act classifies educational AI that determines access, evaluation or progression as high-risk. This analysis compares regulation that bites at certification and audit against ethical constraints that bite while the system is running.">
+<link rel="canonical" href="https://www.prashanthshenoy.com/research/eu-ai-act-runtime-governance-education.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="What the EU AI Act asks of a school, and what it cannot reach">
+<meta property="og:description" content="Regulation arrives at certification and at audit. The behaviour a student actually meets is decided in between. A comparative analysis of two governance logics.">
+<meta property="og:url" content="https://www.prashanthshenoy.com/research/eu-ai-act-runtime-governance-education.html">
+<meta property="og:image" content="https://www.prashanthshenoy.com/assets/img/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='none' stroke='%230E5E56' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%230E5E56' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="../index.html">
+      <span class="monogram" aria-hidden="true">PS</span>
+      <span class="brand__name">Prashanth Shenoy</span>
+    </a>
+    <div class="header-actions">
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#evidence">Evidence</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../index.html#about">About</a>
+        <a href="../work-with-ps.html">Work with PS</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="study-hero">
+  <div class="wrap wrap--narrow">
+    <a class="back-link" href="../index.html#evidence">&larr; All research</a>
+    <span class="eyebrow">Comparative governance analysis &middot; ICHORA 2026 &middot; IEEE</span>
+    <h1>From post-hoc regulation to runtime governance</h1>
+    <p class="authors">Mirka Saarela &amp; Prashanth Shenoy &middot; Faculty of Information Technology, University of Jyväskylä</p>
+  </div>
+</section>
+
+<div class="wrap wrap--narrow">
+
+  <div class="keyfacts">
+    <div class="keyfact"><span class="n">High-risk</span><p>how the Act classifies educational AI that determines access, evaluation or progression</p></div>
+    <div class="keyfact"><span class="n">Art. 14</span><p>human oversight becomes a design obligation, not a policy statement</p></div>
+    <div class="keyfact"><span class="n">Banned</span><p>emotion inference in educational settings, under Recital 31(f)</p></div>
+    <div class="keyfact"><span class="n num">3</span><p>points in a system's life where a safeguard can actually bite</p></div>
+  </div>
+
+  <!-- ================= THE DECK ================= -->
+  <span class="eyebrow">The argument in six slides</span>
+  <div class="deck">
+    <div class="deck__track" role="group" aria-label="Explainer slides. Use the arrow keys or swipe.">
+
+      <article class="slide">
+        <span class="slide__n">01 / 06</span>
+        <h3>Two different things are now called AI governance</h3>
+        <p>
+          One is external regulation: an authority sets rules, a system is certified against
+          them before it goes to market, and it is audited afterwards.
+        </p>
+        <p>
+          The other is ethical constraint built into how a model behaves while it is running,
+          shaping what it says and refuses to say in the moment.
+        </p>
+        <p>
+          <strong>Both are called governance. They do not govern the same thing, and they do
+          not govern at the same time.</strong>
+        </p>
+      </article>
+
+      <article class="slide">
+        <span class="slide__n">02 / 06</span>
+        <h3>The useful question is when the constraint bites</h3>
+        <p>
+          Fairness research already sorts interventions by stage: <strong>pre-processing</strong>
+          fixes the data, <strong>in-processing</strong> changes the learning, <strong>post-processing</strong>
+          adjusts the output after the fact.
+        </p>
+        <p>
+          Explainability sorts the same way: <strong>intrinsic</strong> (interpretable by design),
+          <strong>in-hoc</strong> (reading the model during inference), <strong>post-hoc</strong>
+          (an external explainer applied to a decision already made).
+        </p>
+        <p class="muted">
+          Read that way, an argument about explainability stops being technical. It is an
+          argument about when a commitment should take effect.
+        </p>
+      </article>
+
+      <article class="slide">
+        <span class="slide__n">03 / 06</span>
+        <h3>What the Act actually does to a school</h3>
+        <p>
+          The EU AI Act is risk-based, and it puts educational AI that determines access,
+          evaluation or progression in the <strong>high-risk</strong> category. That is not a
+          niche classification; it covers admissions screening, assessment, placement and
+          exam monitoring.
+        </p>
+        <p>
+          Providers must run risk management, meet data governance standards, keep technical
+          documentation, and enable human oversight. <strong>Article 14</strong> requires
+          systems be built so a person can effectively oversee them. Conformity assessment
+          and post-market monitoring extend accountability past launch.
+        </p>
+        <p>
+          And some things are simply prohibited: inferring emotions in an educational setting
+          is banned outright.
+        </p>
+      </article>
+
+      <article class="slide">
+        <span class="slide__n">04 / 06</span>
+        <h3>The other paradigm governs at runtime</h3>
+        <p>
+          Some developers now publish structured normative commitments intended to shape the
+          model's behaviour during training and deployment. Anthropic's constitution for
+          Claude is the worked example in this paper.
+        </p>
+        <p>
+          It instructs the model to be <em>transparent</em>, not pursuing hidden agendas or
+          misrepresenting its own reasoning, and <em>forthright</em>, volunteering what a user
+          would want in order to judge for themselves.
+        </p>
+        <p>
+          <strong>That relocates explainability.</strong> It stops being a document produced
+          for an auditor and becomes a property of the conversation a student is having.
+        </p>
+      </article>
+
+      <article class="slide">
+        <span class="slide__n">05 / 06</span>
+        <h3>Each one has a hole the other fills</h3>
+        <p>
+          Regulation carries democratic legitimacy and real sanction, but it concentrates at
+          certification and audit. Training data selection, architecture and inference
+          constraints sit between those moments and are comparatively undergoverned.
+        </p>
+        <p>
+          Design-embedded constraints operate exactly there, continuously and portably across
+          jurisdictions. But they are authored by the developer. There is no public
+          authorisation, and no enforceable penalty for changing them.
+        </p>
+        <div class="slide__fig">
+          <svg viewBox="0 0 660 250" style="min-width:520px; width:100%" role="img" aria-label="Diagram of an AI system lifecycle. Regulatory governance covers ex-ante conformity assessment at the start and audit and post-market monitoring at the end, with a dashed gap across the middle. Design-embedded governance covers that middle stretch, runtime and interaction.">
+            <g font-family="Inter, sans-serif" fill="var(--ink-3)">
+
+              <text x="80" y="26" font-size="12.5" font-weight="600" fill="var(--accent)" letter-spacing="1.2">REGULATORY GOVERNANCE</text>
+              <rect x="80" y="40" width="170" height="30" rx="4" fill="var(--accent)" opacity="0.85"/>
+              <text x="165" y="60" font-size="12.5" text-anchor="middle" fill="var(--paper)">Ex-ante conformity</text>
+              <rect x="460" y="40" width="160" height="30" rx="4" fill="var(--accent)" opacity="0.85"/>
+              <text x="540" y="60" font-size="12.5" text-anchor="middle" fill="var(--paper)">Audit, monitoring</text>
+              <line x1="250" y1="55" x2="460" y2="55" stroke="var(--rule-strong)" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="355" y="90" font-size="12.5" text-anchor="middle" font-style="italic">little regulatory purchase here</text>
+
+              <line x1="70" y1="125" x2="630" y2="125" stroke="var(--rule-strong)" stroke-width="1.5"/>
+              <line x1="260" y1="119" x2="260" y2="131" stroke="var(--rule-strong)" stroke-width="1.5"/>
+              <line x1="450" y1="119" x2="450" y2="131" stroke="var(--rule-strong)" stroke-width="1.5"/>
+              <g font-size="12.5" text-anchor="middle" fill="var(--ink)">
+                <text x="165" y="146">Design &amp; training</text>
+                <text x="355" y="146">Runtime &amp; interaction</text>
+                <text x="540" y="146">Deployment &amp; audit</text>
+              </g>
+
+              <text x="80" y="185" font-size="12.5" font-weight="600" fill="var(--accent)" letter-spacing="1.2">DESIGN-EMBEDDED GOVERNANCE</text>
+              <rect x="250" y="198" width="210" height="30" rx="4" fill="none" stroke="var(--accent)" stroke-width="2"/>
+              <text x="355" y="218" font-size="12.5" text-anchor="middle" fill="var(--accent)">Runtime constraints</text>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <article class="slide">
+        <span class="slide__n">06 / 06</span>
+        <h3>Three questions worth asking your vendor</h3>
+        <ol style="display:grid; gap:.55rem; padding-left:1.2rem; color:var(--ink-2); font-size:var(--step--1); margin-top:.25rem">
+          <li>Which of the things we use this system for fall inside the high-risk category, and who has written that down?</li>
+          <li>For each safeguard you have described, at what point in the system's life does it actually take effect: before release, while it is running, or only when someone audits it?</li>
+          <li>Who authored the constraints that operate at runtime, and what happens, to us, if they change them?</li>
+        </ol>
+        <p style="margin-top:.75rem">
+          Compliance and design are not alternatives. Concentrating everything at audit reduces
+          governance to paperwork; relying only on a vendor's constitution privatises the rules.
+        </p>
+        <p class="slide__sign">PS</p>
+      </article>
+
+    </div>
+
+    <div class="deck__bar">
+      <div class="deck__dots" role="tablist" aria-label="Slides"></div>
+      <span class="deck__hint">Swipe, or use &larr; &rarr;</span>
+      <div class="deck__nav">
+        <button class="deck__btn" type="button" data-deck="prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="deck__btn" type="button" data-deck="next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PROSE ================= -->
+  <div class="prose">
+
+    <h2>The two logics, side by side</h2>
+    <figure class="figure">
+      <table style="width:100%; border-collapse:collapse; font-size:var(--step--1); min-width:440px">
+        <thead>
+          <tr style="text-align:left; border-bottom:1px solid var(--rule-strong)">
+            <th style="padding:.5rem .6rem .5rem 0; font-weight:600"></th>
+            <th style="padding:.5rem .6rem; font-weight:600">Regulatory</th>
+            <th style="padding:.5rem 0 .5rem .6rem; font-weight:600">Design-embedded</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--ink-2)">
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.5rem .6rem .5rem 0; color:var(--ink)">Purpose</td>
+            <td style="padding:.5rem .6rem">Compliance, accountability, auditability</td>
+            <td style="padding:.5rem 0 .5rem .6rem">Understanding, trust, interaction</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.5rem .6rem .5rem 0; color:var(--ink)">When it acts</td>
+            <td style="padding:.5rem .6rem">Post-hoc or periodic</td>
+            <td style="padding:.5rem 0 .5rem .6rem">Runtime, at the interaction</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.5rem .6rem .5rem 0; color:var(--ink)">Enforcement</td>
+            <td style="padding:.5rem .6rem">External oversight, documentation</td>
+            <td style="padding:.5rem 0 .5rem .6rem">Internal behavioural constraint</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--rule)">
+            <td style="padding:.5rem .6rem .5rem 0; color:var(--ink)">Audience</td>
+            <td style="padding:.5rem .6rem">Regulators, auditors, institutions</td>
+            <td style="padding:.5rem 0 .5rem .6rem">Learners, educators, end users</td>
+          </tr>
+          <tr>
+            <td style="padding:.5rem .6rem .5rem 0; color:var(--ink)">The user is</td>
+            <td style="padding:.5rem .6rem">A recipient of explanations</td>
+            <td style="padding:.5rem 0 .5rem .6rem">A participant in the explanation</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption>Explainability under external regulation compared with design-embedded ethical frameworks.</figcaption>
+    </figure>
+
+    <h2>Why the comparison is not just European</h2>
+    <p>
+      Regulatory strategies differ by jurisdiction. The United States has proceeded through
+      executive guidance, agency standards and sector-specific initiatives rather than a
+      single statute. China emphasises algorithmic registration, security review and
+      content obligations for generative systems. UNESCO has articulated global ethical
+      principles grounded in human rights and accountability.
+    </p>
+    <p>
+      What these converge on is instructive: documentation, auditing, risk assessment and
+      institutional oversight. The instruments differ; the temporal position does not. All
+      of them concentrate their force outside the model, before release and after deployment.
+    </p>
+    <p>
+      Educational AI, meanwhile, has become transnational. A model developed under one
+      regulatory regime is delivered through cloud services into classrooms governed by
+      another. The paper draws the parallel with commercial aviation, where nobody seriously
+      argues that safety oversight can remain local and discretionary once the aircraft
+      crosses borders.
+    </p>
+
+    <h2>What changes as systems become more autonomous</h2>
+    <p>
+      The paper traces a ladder. Human-led instruction, where AI is minimal. AI-assisted
+      systems offering decision support and analytics. AI-integrated systems generating
+      automated feedback and adaptive responses. Then agentic systems that initiate actions
+      and coordinate workflows.
+    </p>
+    <p>
+      The human role shifts at every rung: from performing the instructional task, to
+      supervising it, to validating outputs, to governing and allocating authority. Governance
+      is not an administrative layer bolted on top of that progression. It is what the human
+      job becomes.
+    </p>
+
+    <div class="callout">
+      <p>
+        A note on what this paper is and is not. It is a conceptual and comparative analysis,
+        not an empirical study and not legal advice. It reads two governance paradigms against
+        each other to show that they operate at different points in a system's life. An
+        institution deciding its actual obligations under the Act needs counsel, not a
+        conference paper.
+      </p>
+    </div>
+
+    <h2>Citation</h2>
+    <p class="cite">Saarela, M., &amp; Shenoy, P. (2026). From post-hoc regulation to runtime governance: Ethics and explainability in AI-driven education. In 2026 8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (ICHORA) (pp. 1&ndash;9). IEEE.</p>
+
+    <div class="cluster mt-4">
+      <a class="btn btn--sm" href="mailto:prshenoy@jyu.fi?subject=Question%20about%20the%20EU%20AI%20Act%20analysis">Ask about this study</a>
+      <a class="btn btn--ghost btn--sm" href="../index.html#evidence">All research</a>
+    </div>
+
+  </div>
+</div>
+
+<section class="contact" style="margin-top:var(--sp-6)">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 class="mt-4">Ask about any of this</h2>
+    <p class="mt-4" style="max-width:38rem; color:var(--ink-2); font-size:var(--step--1)">
+      Sessions and seminars on this work usually run to about ninety minutes. The shape of
+      one is set after a training needs analysis with the school or organisation's own
+      leadership, never before it.
+    </p>
+    <div class="contact__grid">
+      <div class="contact__item">
+        <span class="eyebrow">Email</span>
+        <a href="mailto:prshenoy@jyu.fi">prshenoy@jyu.fi</a>
+        <span class="note">University of Jyväskylä</span>
+      </div>
+      <div class="contact__item">
+        <span class="eyebrow">WhatsApp</span>
+        <button type="button" data-reveal-phone data-x="MzU4NDY4MDQxNzMz">Show the number</button>
+        <span class="note">Finland &middot; UTC+2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <p>&copy; <span class="num">2026</span> Prashanth Shenoy. Research supported by the Research Council of Finland (project no. 356314).</p>
+    <div class="site-footer__links">
+      <a href="https://orcid.org/0009-0000-4653-6191">ORCID</a>
+      <a href="mailto:prshenoy@jyu.fi">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>
