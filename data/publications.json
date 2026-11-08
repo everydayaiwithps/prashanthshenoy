@@ -1,284 +1,196 @@
 {
-  "_note": "Single source of truth for the research library. Edit here; regenerate pages. Every 'status', 'venue', 'year' and 'doi' below is DRAFT, extracted from the PDFs and needs Prashanth's confirmation before publishing. 'pdfHosting': 'doi-only' unless the licence permits self-hosting.",
+  "_note": "Single source of truth for the publication record. Taken from section 15 of the content specification dated 7 November 2026. Nothing on the site is generated from this file at build time; it is kept so that page copy and this record can be checked against each other. Status labels must stay one of: Published, Accepted, Under review, In progress, In design, Proposed.",
+  "_updated": "2026-11-08",
 
   "author": {
     "name": "Prashanth Shenoy",
     "shortName": "PS",
-    "title": "Grant Researcher",
-    "group": "HUMBLE HCI group",
+    "title": "AI in Education (AIED) Researcher",
+    "group": "HUMBLE, Human and Machine-Based Intelligence in Learning",
     "faculty": "Faculty of Information Technology",
     "institution": "University of Jyväskylä, Finland",
     "email": "prshenoy@jyu.fi",
     "orcid": "https://orcid.org/0009-0000-4653-6191",
-    "funding": "Research Council of Finland, project no. 356314",
-    "_note": "Study pages carry the affiliation exactly as printed on each paper (faculty and university). The title and group appear on the homepage and share card, where they describe the current role rather than a paper's byline.",
-    "_todo": "Confirm the official capitalisation and full form of the group name. Written here as 'HUMBLE HCI group'."
+    "scholar": "https://scholar.google.com/citations?user=XSacJ08AAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/learnerforever",
+    "funding": "Research Council of Finland, project no. 356314"
   },
 
-  "studies": [
+  "publications": [
     {
-      "slug": "teacher-ai-adoption-tam-meta-analysis",
+      "id": "tam-meta-analysis",
+      "title": "Explaining teacher adoption of AI through the technology acceptance model: a meta-analysis and systematic review",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "Artificial Intelligence Review",
+      "publisher": "Springer",
+      "type": "journal",
+      "year": 2026,
+      "status": "Published",
+      "doi": "10.1007/s10462-026-11736-x",
+      "url": "https://doi.org/10.1007/s10462-026-11736-x",
+      "strand": "explain",
       "featured": true,
-      "order": 1,
-      "title": "Explaining Teacher Adoption of AI Through the Technology Acceptance Model: A Meta-Analysis and Systematic Review",
-      "shortTitle": "Does the standard adoption model still work for AI?",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "Journal name withheld until acceptance",
-      "status": "under revision after peer review; revision deadline 6 September 2026",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "adoption",
-      "tags": ["Meta-analysis", "Systematic review", "PRISMA"],
-      "slots": {
-        "question": "Teacher AI adoption is routinely predicted using the Technology Acceptance Model: perceived usefulness and perceived ease of use. That model was built for static, deterministic tools. Does it still explain adoption of a technology that is opaque, adaptive, and capable of unsettling professional identity?",
-        "study": "A PRISMA systematic review of 38 empirical studies covering 15,919 teachers across 19 countries, with a random-effects meta-analysis of the 24 studies reporting extractable correlations (N = 11,768).",
-        "finding": "The core associations hold and are moderate to strong, but they explain little about any particular setting. Heterogeneity is extreme (I² = 97.9–98.6%) and prediction intervals run from negative to near-unity. Five conditions account for the variation: AI literacy and trust, a shift from functional to identity-based acceptance, sociocultural and institutional context, tool-specific adoption logics, and ethical risk calibration.",
-        "matters": "An adoption survey built on usefulness and ease of use will not tell an institution whether its teachers will actually use a tool. The model points in the right direction and predicts almost nothing about a specific school, subject or country."
-      },
-      "numbers": [
-        { "n": "38", "label": "empirical studies synthesised" },
-        { "n": "15,919", "label": "teachers represented" },
-        { "n": "19", "label": "countries" },
-        { "n": "97.9–98.6%", "label": "heterogeneity (I²) across the three pooled associations" }
-      ],
-      "hasDeck": true
+      "explainer": "research/teacher-ai-adoption-tam-meta-analysis.html",
+      "oneLine": "The largest synthesis of its kind on why teachers adopt AI, and what the standard model leaves out."
     },
     {
-      "slug": "generative-ai-teacher-professional-development-framework",
-      "featured": true,
-      "order": 2,
+      "id": "genai-tpd",
       "title": "A critical review and actionable framework for integrating generative AI into teacher professional development",
-      "shortTitle": "What a generative-AI training programme should actually contain",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "Discover Education 5:570",
-      "status": "published",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "Discover Education",
+      "publisher": "Springer Nature",
+      "type": "journal",
+      "year": 2026,
+      "status": "Published",
       "doi": "10.1007/s44217-026-01579-7",
-      "licence": "CC BY 4.0",
-      "pdfHosting": "self-host-permitted",
-      "strand": "training",
-      "tags": ["Critical review", "Framework", "TPACK"],
-      "slots": {
-        "question": "Generative AI is arriving in teacher professional development faster than anyone can say what it is good for. What does it actually afford, and what would a defensible programme look like?",
-        "study": "A critical review of 20 peer-reviewed studies (16 empirical, 4 conceptual) published between 2023 and 2025, analysed for framework development, implementation strategy and pedagogical affordance.",
-        "finding": "Four affordance categories emerge: functional, cognitive, social and reflective. Constructivist principles appear in roughly two thirds of studies, but fewer than one third engage TPACK. More seriously, existing frameworks inherit an assumption that the technology is under the teacher's control, an assumption that generative AI violates through probabilistic output, variable behaviour and confident error.",
-        "matters": "The review produces the GenAI-TPD framework: five competency domains across four developmental stages, expressed as testable propositions and observable indicators. That gives a programme designer something to build and assess against, rather than another reading list."
-      },
-      "numbers": [
-        { "n": "20", "label": "studies reviewed (2023–2025)" },
-        { "n": "4", "label": "affordance categories identified" },
-        { "n": "5 × 4", "label": "competency domains by developmental stage" },
-        { "n": "<1/3", "label": "of studies engage TPACK explicitly" }
-      ],
-      "hasDeck": true
-    },
-    {
-      "slug": "eu-ai-act-runtime-governance-education",
+      "url": "https://doi.org/10.1007/s44217-026-01579-7",
+      "strand": "define",
       "featured": true,
-      "order": 3,
-      "title": "From Post-Hoc Regulation to Runtime Governance: Ethics and Explainability in AI-Driven Education",
-      "shortTitle": "What the EU AI Act asks of a school, and what it cannot reach",
-      "authors": ["Mirka Saarela", "Prashanth Shenoy"],
-      "year": "2026",
-      "venue": "ICHORA 2026. 8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (IEEE), pp. 1–9",
-      "status": "published",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "governance",
-      "tags": ["EU AI Act", "Explainability", "Governance"],
-      "slots": {
-        "question": "Two different things are now called AI governance: external regulation that audits a system after the fact, and ethical constraints built into how a model behaves while it runs. In education, which one is doing the work?",
-        "study": "A comparative analysis of the EU AI Act and national AI governance guidance against design-embedded ethical frameworks, using Anthropic's constitution for Claude as the worked example, read through a temporal lens: when in a system's life does the constraint bite?",
-        "finding": "Regulation operationalises explainability retrospectively, through documentation, auditability and conformity assessment. Design-embedded frameworks operationalise it at runtime, as a property of the interaction itself. These are not competing answers; they bind at different moments and neither substitutes for the other.",
-        "matters": "The EU AI Act classifies educational AI used for admissions, evaluating learning outcomes, educational placement, or monitoring students during examinations as high-risk. For schools and vendors, transparency and human oversight stop being aspirations and become legal obligations, while the behaviour a student actually meets is governed by design decisions no audit will see."
-      },
-      "numbers": [
-        { "n": "4", "label": "educational uses the EU AI Act treats as high-risk" },
-        { "n": "2", "label": "governance logics compared" },
-        { "n": "Art. 4", "label": "AI Act obligation on AI literacy" }
-      ],
-      "hasDeck": true
+      "oneLine": "The GenAI-TPD framework: a staged roadmap for teacher professional development in generative AI."
     },
     {
-      "slug": "ai-literacy-governance-indian-education-policy",
+      "id": "umbrella-review",
+      "title": "AI literacy frameworks for educators: an umbrella review",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "Proceedings of the 59th Hawaii International Conference on System Sciences (HICSS 59)",
+      "type": "conference",
+      "year": 2026,
+      "status": "Published",
+      "url": "https://urn.fi/URN:NBN:fi:jyu-202601261572",
+      "strand": "define",
       "featured": true,
-      "order": 4,
-      "title": "AI Literacy and Governance in Indian Education: Mapping Policy Approaches and Institutional Initiatives",
-      "shortTitle": "India's AI literacy policy, benchmarked against UNESCO and OECD",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "ACDSA 2026. International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (IEEE), pp. 1–6",
-      "status": "published",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "governance",
-      "tags": ["Policy analysis", "India", "UNESCO / OECD"],
-      "slots": {
-        "question": "India runs some of the world's largest AI-in-education programmes. How do its policies actually conceptualise AI literacy, and how far do they align with international benchmarks?",
-        "study": "Structured document analysis of national policy documents, strategic frameworks and curricular materials from NITI Aayog, the Ministry of Education and CBSE, scored on a defined 1–5 rubric across six dimensions: policy framing, ethics and governance, teacher professional development, student competencies, data protection, and implementation mechanisms.",
-        "finding": "India benchmarks strongly on curriculum integration and student competency development. It benchmarks weakly on governance structures, teacher professional development and data protection. Those are the three dimensions that determine whether curriculum ambition survives contact with a classroom.",
-        "matters": "The gap is not one of intent. It is that policy specifies what students should learn without specifying who governs the systems, who trains the teachers, or who holds the data. That is a diagnosis any large education system can check itself against."
-      },
-      "numbers": [
-        { "n": "6", "label": "benchmark dimensions" },
-        { "n": "1–5", "label": "scoring rubric against UNESCO and OECD frameworks" },
-        { "n": "3", "label": "dimensions where critical gaps were identified" }
-      ],
-      "hasDeck": true
+      "oneLine": "A map of what the field means by teacher AI literacy, built from 28 systematic reviews."
     },
     {
-      "slug": "diagnosing-teacher-ai-readiness-before-training",
-      "featured": true,
-      "order": 5,
-      "title": "Lowering the Barrier: A Quantitative Analysis of Generative AI Accessibility for Teachers in India: Diagnosing Readiness Before Designing Training",
-      "shortTitle": "Diagnose the cohort before you design the training",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "ICETC 2026. International Conference on Education Technology and Computers, Porto, Portugal, 14–17 December 2026",
-      "status": "accepted for presentation and publication; proceedings publication follows presentation. Paper ID AZ1039; registration paid 14 August 2026",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "training",
-      "tags": ["Field study", "Diagnostic instrument", "India"],
-      "slots": {
-        "question": "Most teacher AI training is evaluated by measuring attitudes afterwards. If a cohort already believes AI is useful before you start, what is the training for, and how would you know where the real gap is?",
-        "study": "Pooled pre- and post-workshop data from two hands-on ChatGPT workshops at two institutions in and around Bengaluru (n = 122 before, n = 119 after), profiled across five acceptance-derived readiness dimensions and treated as independent cross-sections.",
-        "finding": "Most dimensions sit near the ceiling of a seven-point scale before any training happens. The exceptions are perceived ease of use and AI self-efficacy, and those are precisely the two that shift afterwards (d = 0.43 and d = 0.33). Usefulness, enjoyment and intention do not move, because there is nowhere for them to go. Item-level analysis locates the change on concrete task affordance and integrability, not on abstract value.",
-        "matters": "The study produces a five-character readiness code and a companion diagnostic instrument (AIT3) that a trainer can run on any cohort beforehand, so a programme is aimed at the dimension that is actually low rather than the one that is easiest to measure."
-      },
-      "numbers": [
-        { "n": "122 / 119", "label": "teachers surveyed before / after" },
-        { "n": "2", "label": "school sites pooled" },
-        { "n": "d = 0.43", "label": "shift in perceived ease of use" },
-        { "n": "d = 0.33", "label": "shift in AI self-efficacy" }
-      ],
-      "hasDeck": true
+      "id": "india-policy",
+      "title": "AI literacy and governance in Indian education: mapping policy approaches and institutional initiatives",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA 2026)",
+      "type": "conference",
+      "year": 2026,
+      "status": "Published",
+      "doi": "10.1109/ACDSA67686.2026.11467788",
+      "url": "https://doi.org/10.1109/ACDSA67686.2026.11467788",
+      "strand": "govern",
+      "explainer": "research/ai-literacy-governance-indian-education-policy.html",
+      "oneLine": "India's national AI literacy initiatives, benchmarked against UNESCO and OECD standards."
     },
     {
-      "slug": "ai-literacy-educators-global-south-india",
-      "featured": false,
-      "phase": "ongoing",
-      "order": 6,
-      "title": "Advancing AI Literacy Among Educators in the Global South: Evidence from a Generative AI Intervention in India",
-      "shortTitle": "What a single 90-minute workshop actually changes",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "",
-      "status": "not yet accepted; presented on the site as ongoing work, without a venue claim",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "training",
-      "tags": ["Field study", "Pre/post", "Global South"],
-      "slots": {
-        "question": "India runs AI-in-education initiatives at enormous scale, yet there is almost no evidence on how its teachers respond to hands-on generative AI training. What does ninety minutes actually move?",
-        "study": "A pre/post field study of a 90-minute ChatGPT workshop on iterative (chained) prompting for lesson planning, with teachers in Bengaluru (44 before, 40 after), using anonymous unpaired surveys across five readiness dimensions, with effect sizes, confidence intervals and false-discovery-rate correction.",
-        "finding": "The shift is selective, not general. Perceived ease of use rose by a medium effect (d = 0.57, 95% CI [0.13, 1.01]); the remaining dimensions were already near ceiling and did not move. Gains sit on concrete task affordance, integrability and perceived resource access. Several abstract items showed slightly negative estimates. An exploratory comparison found public-institution teachers reported higher self-efficacy than private-institution peers.",
-        "matters": "It complicates the simple digital-divide reading of teacher readiness in the Global South, and it argues that short interventions should be designed and evaluated dimension by dimension rather than as a single 'did attitudes improve' question."
-      },
-      "numbers": [
-        { "n": "90 min", "label": "single hands-on workshop" },
-        { "n": "44 / 40", "label": "teachers before / after" },
-        { "n": "d = 0.57", "label": "shift in perceived ease of use" },
-        { "n": "0", "label": "of the other four dimensions moved" }
-      ],
-      "hasDeck": true
+      "id": "runtime-governance",
+      "title": "From post-hoc regulation to runtime governance: ethics and explainability in AI-driven education",
+      "authors": ["Saarela, M.", "Shenoy, P."],
+      "venue": "IEEE 8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (ICHORA 2026)",
+      "type": "conference",
+      "year": 2026,
+      "status": "Published",
+      "doi": "10.1109/ICHORA69329.2026.11536988",
+      "url": "https://doi.org/10.1109/ICHORA69329.2026.11536988",
+      "strand": "govern",
+      "explainer": "research/eu-ai-act-runtime-governance-education.html",
+      "oneLine": "Why AI regulation in education needs ethics built into the tool itself."
     },
     {
-      "slug": "generative-ai-usability-teacher-training-india",
-      "featured": false,
-      "phase": "ongoing",
-      "order": 7,
-      "title": "Generative AI Usability in Teacher Training: A Technology Acceptance Model Study from India",
-      "shortTitle": "The pilot study behind the field work",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "year": "2026",
-      "venue": "",
-      "status": "acceptance not yet confirmed to me; presented on the site as ongoing work, without a venue claim",
-      "doi": "",
-      "pdfHosting": "doi-only",
-      "strand": "training",
-      "tags": ["Pilot study", "SDG 4"],
-      "slots": {
-        "question": "Does a short, task-oriented workshop lower the usability barrier that stops non-technical teachers using generative AI?",
-        "study": "A pilot exploratory pre/post intervention with 44 pre-service teachers in India, using ChatGPT for curriculum design tasks and a seven-point acceptance instrument.",
-        "finding": "Perceived ease of use rose significantly (p = 0.0107). Perceived usefulness (6.07 → 6.25) and behavioural intention (6.06 → 6.22) were already high and did not change, a ceiling effect.",
-        "matters": "The adoption bottleneck is interaction readiness, not persuasion. Participants were already convinced; what they lacked was fluency. This is the pilot that the larger Bengaluru field studies build on."
-      },
-      "numbers": [],
-      "hasDeck": false
+      "id": "contingent-scaffolding",
+      "title": "Contingent scaffolding in commercial AI tutors: establishing a baseline for agentic designs",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "IEEE ACDSA 2027, Rio de Janeiro, Brazil",
+      "type": "conference",
+      "year": 2027,
+      "status": "Accepted",
+      "strand": "anticipate",
+      "oneLine": "Do AI tutors adapt their support to the learner the way good teachers do?"
     },
     {
-      "slug": "ai-literacy-umbrella-review",
-      "featured": true,
-      "order": 2,
-      "title": "AI Literacy Frameworks for Educators: An Umbrella Review",
-      "shortTitle": "Do the AI literacy frameworks agree with each other?",
-      "authors": ["Prashanth Shenoy", "Mirka Saarela"],
-      "_authorsNote": "Tung X. Bui is the EDITOR of the HICSS proceedings, not a co-author. The BibTeX export listed him as an author, which is a common Google Scholar mis-parse of an edited proceedings volume. The self-archived version confirms two authors.",
-      "year": "2026",
-      "venue": "In T. X. Bui (Ed.), Proceedings of the 59th Hawaii International Conference on System Sciences (pp. 44–53)",
-      "status": "published",
-      "url": "https://hdl.handle.net/10125/111399",
-      "licence": "CC BY-NC-ND 4.0",
-      "pdfHosting": "link-to-handle",
-      "strand": "adoption",
-      "tags": ["Umbrella review", "Frameworks"],
-      "slots": {
-        "question": "Dozens of frameworks now claim to define AI literacy for educators. Do they agree on what they are describing, and does any of them tell you how to measure it?",
-        "study": "An umbrella review, meaning a review of reviews. 28 prior studies (26 systematic or scoping reviews, 2 design and resource-mapping studies) published 2020 to 2025, drawn from six databases and screened under PRISMA 2020. Four questions: underpinning models, treatment of ethics and of explainability, implementation challenges and enablers, and assessment strategies.",
-        "finding": "The field is fragmented. Constructivism is the dominant theoretical base, with TPACK and AI4K12 close behind, but treatment of ethics varies enormously between frameworks. Challenges cluster on insufficient teacher preparation, resource limits and technological complexity; enablers on structured professional development, project-based learning and institutional support. Explainability, which decides whether a teacher can trust an AI judgment in front of a class, is explicitly addressed in exactly one of the 28.",
-        "matters": "Adopting a framework off the shelf means inheriting whatever it happened to leave out. There is still no standardised, teacher-specific way to assess AI literacy, so most programmes cannot demonstrate that they worked."
-      },
-      "numbers": [
-        { "n": "28", "label": "prior reviews synthesised" },
-        { "n": "1", "label": "of the 28 explicitly addresses explainability" },
-        { "n": "6", "label": "databases searched, 2020 to 2025" },
-        { "n": "0", "label": "standardised teacher-specific assessment tools found" }
-      ],
-      "hasDeck": false
+      "id": "india-intervention",
+      "title": "Advancing AI literacy among educators in the Global South: evidence from a generative AI intervention in India",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "IEEE ACDSA 2027, Rio de Janeiro, Brazil",
+      "type": "conference",
+      "year": 2027,
+      "status": "Accepted",
+      "strand": "build",
+      "oneLine": "What a 90-minute, hands-on generative AI workshop does for teacher readiness."
+    },
+    {
+      "id": "lowering-the-barrier",
+      "title": "Lowering the barrier: a quantitative analysis of generative AI accessibility for teachers in India, diagnosing readiness before designing training",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "IEEE International Conference on Education Technology and Computers (ICETC 2026), Porto, Portugal",
+      "type": "conference",
+      "year": 2026,
+      "status": "Accepted",
+      "strand": "explain",
+      "explainer": "research/diagnosing-teacher-ai-readiness-before-training.html",
+      "oneLine": "Diagnose before you train."
+    },
+    {
+      "id": "genai-usability-tam",
+      "title": "Generative AI usability in teacher training: a technology acceptance model study from India",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME 2026), Bali, Indonesia",
+      "type": "conference",
+      "year": 2026,
+      "status": "Accepted",
+      "strand": "explain",
+      "oneLine": "How teachers in training judge the usability of generative AI."
+    },
+    {
+      "id": "critical-interaction",
+      "title": "Designing for critical interaction: building adoption readiness and output evaluation in generative AI teacher training",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "type": "journal",
+      "year": 2026,
+      "status": "Under review",
+      "strand": "build",
+      "oneLine": "Training teachers not only to use AI, but to judge it."
+    },
+    {
+      "id": "ai-credentials",
+      "title": "AI credentials in computing education: a scoping review of curricular transformation, competencies, ethics, and evidence",
+      "authors": ["Shenoy, P.", "Saarela, M."],
+      "venue": "ACM Transactions on Computing Education",
+      "type": "journal",
+      "year": 2026,
+      "status": "Under review",
+      "strand": "govern",
+      "oneLine": "How universities are building AI credentials, and how mature that provision really is."
+    },
+    {
+      "id": "l2-writing",
+      "title": "Human-AI division and collaboration in secondary L2 writing instruction: from classroom design to learning analytics",
+      "authors": ["Deng, L.", "Shenoy, P.", "Saarela, M."],
+      "venue": "IEEE ICETC 2026",
+      "type": "conference",
+      "year": 2026,
+      "status": "Accepted",
+      "role": "Co-author. Deng Lan is lead author.",
+      "group": "framework-in-use",
+      "strand": "define",
+      "oneLine": "The GenAI-TPD framework applied in a Chinese secondary classroom."
     }
   ],
 
-  "tools": [
-    {
-      "id": "ait3",
-      "name": "AIT3",
-      "url": "https://aittt.app",
-      "secondaryUrl": "https://aittt.app/trainer-ref-card",
-      "secondaryLabel": "Trainer Reference Card",
-      "free": true,
-      "relatedStudy": "diagnosing-teacher-ai-readiness-before-training",
-      "summary": "Sixteen Likert items across five readiness dimensions (AISE, PU, PEOU, PE, BI), taken on a phone or laptop before a workshop. A five-character readiness code is generated locally in the browser; no individual response is transmitted or stored. Facilitators aggregate the cohort's codes and read them against the Trainer Reference Card to tailor the session."
-    },
-    {
-      "id": "oppija",
-      "name": "Oppija",
-      "url": "https://www.oppija.com",
-      "free": true,
-      "summary": "A free app that keeps teachers current on AI literacy through short, gamified, bite-sized lessons on a continuous basis, rather than through a single training day.",
-      "_todo": "Confirm the exact domain (given as 'www.oppija.com') and whether the framing of its relationship to the field-study findings is one Prashanth wants stated on the site."
-    }
+  "ongoing": [
+    { "id": "teacher-deference", "title": "When AI suggests, do teachers defer?", "status": "In design", "openToPartners": true },
+    { "id": "india-sem", "title": "What drives teacher AI adoption in India? A survey and SEM study", "status": "In progress", "openToPartners": true },
+    { "id": "finland-qualitative", "title": "AI adoption in Finnish high schools: a qualitative study", "status": "In design", "openToPartners": true },
+    { "id": "accountable-memory", "title": "Accountable pedagogical memory for AI tutors", "status": "In progress", "openToPartners": false },
+    { "id": "learn", "title": "LEARN: educationally aligned AI", "status": "Proposed", "openToPartners": false },
+    { "id": "debrief", "title": "Human-led and AI-led reflection in adult learning", "status": "In design", "openToPartners": false }
   ],
 
-  "strands": [
+  "instruments": [
     {
-      "id": "adoption",
-      "n": "01",
-      "title": "Why teachers adopt AI, and why the standard model misses",
-      "blurb": "Synthesising the global evidence base on teacher acceptance of AI, and showing where a forty-year-old adoption model stops explaining a technology that argues back."
+      "id": "aittt",
+      "name": "aittt.app (AI Train The Teacher)",
+      "description": "Research instrument for teacher AI readiness, used in published studies and freely available to the research community.",
+      "url": "https://aittt.app"
     },
     {
-      "id": "training",
-      "n": "02",
-      "title": "Training that changes the thing that is actually missing",
-      "blurb": "Field studies with teachers in India, and the diagnostic instruments and competency frameworks that came out of them. Measure the cohort first; design second."
-    },
-    {
-      "id": "governance",
-      "n": "03",
-      "title": "Governing AI in education, before and while it runs",
-      "blurb": "How the EU AI Act reaches into schools, where national policy in large systems falls short, and why compliance and design-embedded ethics answer different questions."
+      "id": "scale",
+      "name": "SCALE (Scaffolding Classroom AI Literacy for Educators)",
+      "description": "Open practice toolkit grounded in the GenAI-TPD framework.",
+      "url": "https://coursx.app"
     }
   ]
 }

@@ -1,17 +1,19 @@
-/* prashanthshenoy.com. Progressive enhancement only.
-   Every feature below degrades to something usable with JS disabled. */
+/* prashanthshenoy.com
+   Progressive enhancement only. The reveal cards are native details elements
+   and the mobile menu is a details element too, so the whole site works with
+   JavaScript switched off. Nothing below is load bearing. */
 
 (function () {
   'use strict';
 
-  /* ---- Theme toggle -------------------------------------------------- */
+  /* ---- Theme toggle --------------------------------------------------- */
   var root = document.documentElement;
   var STORE = 'ps-theme';
 
   try {
     var saved = localStorage.getItem(STORE);
     if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
-  } catch (e) { /* private mode, blocked storage, system theme still applies */ }
+  } catch (e) { /* blocked storage, the system theme still applies */ }
 
   document.addEventListener('click', function (ev) {
     var btn = ev.target.closest('.theme-toggle');
@@ -25,7 +27,7 @@
     try { localStorage.setItem(STORE, next); } catch (e) {}
   });
 
-  /* ---- Header hairline on scroll ------------------------------------- */
+  /* ---- Header hairline on scroll -------------------------------------- */
   var header = document.querySelector('.site-header');
   if (header) {
     var onScroll = function () {
@@ -35,9 +37,27 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- Explainer decks ------------------------------------------------
-     The track is a scroll-snap container, so swipe already works with no
-     JS at all. This only adds dots, arrows and keyboard control.        */
+  /* ---- Mobile menu: close on outside click and on Escape --------------- */
+  var menu = document.querySelector('.menu');
+  if (menu) {
+    document.addEventListener('click', function (ev) {
+      if (menu.open && !menu.contains(ev.target)) menu.open = false;
+    });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && menu.open) { menu.open = false; }
+    });
+  }
+
+  /* ---- Mark the current page in the navigation ------------------------- */
+  var here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a, .menu__panel a').forEach(function (a) {
+    var target = (a.getAttribute('href') || '').split('#')[0].split('/').pop();
+    if (target && target === here) a.setAttribute('aria-current', 'page');
+  });
+
+  /* ---- Explainer decks -------------------------------------------------
+     The track is a scroll-snap container, so swiping already works with no
+     JavaScript. This only adds the dots, arrows and keyboard control. */
   document.querySelectorAll('.deck').forEach(function (deck) {
     var track = deck.querySelector('.deck__track');
     var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
@@ -89,11 +109,11 @@
     track.addEventListener('scroll', function () {
       if (ticking) return;
       ticking = true;
-      requestAnimationFrame(function () { sync(); ticking = false; });
+      setTimeout(function () { sync(); ticking = false; }, 60);
     }, { passive: true });
 
-    // Arrow keys work once the deck has focus, not globally, otherwise the
-    // deck hijacks arrow-key page scrolling for readers who never touched it.
+    /* Arrow keys work once the deck has focus, not globally, otherwise the
+       deck hijacks arrow-key page scrolling for readers who never touched it. */
     track.setAttribute('tabindex', '0');
     track.addEventListener('keydown', function (ev) {
       if (ev.key === 'ArrowRight') { ev.preventDefault(); go(index + 1); }
@@ -101,16 +121,16 @@
     });
   });
 
-  /* ---- Portrait fallback ---------------------------------------------
-     Until the real photograph is dropped in at assets/img/portrait.jpg,
-     show a quiet monogram plate rather than a broken-image icon.       */
-  document.querySelectorAll('.about__portrait').forEach(function (img) {
+  /* ---- Portrait fallback -----------------------------------------------
+     If the photograph is ever missing, show a monogram plate rather than a
+     broken image icon. */
+  document.querySelectorAll('.hero__portrait, .about__portrait').forEach(function (img) {
     var swap = function () {
-      img.src = "data:image/svg+xml," + encodeURIComponent(
+      img.src = 'data:image/svg+xml,' + encodeURIComponent(
         "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 600'>" +
-        "<rect width='480' height='600' fill='%23E9E6DF'/>" +
-        "<text x='240' y='325' font-family='Georgia,serif' font-size='120' fill='%230E5E56' " +
-        "text-anchor='middle' opacity='0.55'>PS</text></svg>"
+        "<rect width='480' height='600' fill='%23E9E6DD'/>" +
+        "<text x='240' y='325' font-family='Georgia,serif' font-size='120' fill='%230F5F54' " +
+        "text-anchor='middle' opacity='0.5'>PS</text></svg>"
       );
       img.removeEventListener('error', swap);
     };
@@ -118,17 +138,47 @@
     if (img.complete && img.naturalWidth === 0) swap();
   });
 
-  /* ---- Click-to-reveal phone -----------------------------------------
-     The number is base64-encoded in the markup so that the digit pattern
-     harvesters regex for is not present in the served HTML. It is decoded
-     only on a real click. Not cryptography, just enough friction that a
-     bulk scraper walks past.                                            */
+  /* ---- Enquiry form: compose an email ----------------------------------
+     Static host, so there is no server to post to. The form builds a
+     readable message and hands it to the visitor's own email program. The
+     mailto action on the form element is the no-JavaScript fallback. */
+  var enquiry = document.getElementById('enquiry');
+  if (enquiry) {
+    enquiry.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var get = function (n) {
+        var el = enquiry.elements[n];
+        return el ? (el.value || '').trim() : '';
+      };
+      var interest = enquiry.querySelector('input[name="interest"]:checked');
+      interest = interest ? interest.value : 'Enquiry';
+
+      var lines = [];
+      if (get('name')) lines.push('Name: ' + get('name'));
+      if (get('organisation')) lines.push('Organisation: ' + get('organisation'));
+      if (get('role')) lines.push('Role: ' + get('role'));
+      if (get('country')) lines.push('Country: ' + get('country'));
+      lines.push('Interested in: ' + interest);
+      lines.push('');
+      lines.push(get('message'));
+
+      var href = 'mailto:prshenoy@jyu.fi'
+        + '?subject=' + encodeURIComponent(interest + ' enquiry from ' + (get('organisation') || get('name') || 'the website'))
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+
+      window.location.href = href;
+    });
+  }
+
+  /* ---- Click to reveal phone -------------------------------------------
+     Base64 so the digit pattern harvesters grep for is not in the served
+     HTML. Not cryptography, just enough friction that a bulk scraper
+     walks past. */
   document.querySelectorAll('[data-reveal-phone]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var digits;
       try { digits = atob(btn.getAttribute('data-x') || ''); } catch (e) { return; }
       if (!/^\d{8,15}$/.test(digits)) return;
-
       var pretty = '+' + digits.replace(/^(\d{3})(\d{2})(\d{3})(\d+)$/, '$1 $2 $3 $4');
       var link = document.createElement('a');
       link.href = 'https://wa.me/' + digits;
@@ -138,105 +188,5 @@
       btn.replaceWith(link);
       link.focus();
     });
-  });
-})();
-
-/* ---- Predict-then-reveal cards ---------------------------------------
-   Each .qcard carries data-answer, the zero-based index of the correct
-   option. Guessing before being told is the whole point, so the reveal
-   only happens after a choice is made. No scoring: this is an expert's
-   site, not a quiz app.                                              */
-(function () {
-  'use strict';
-
-  document.querySelectorAll('.qcard').forEach(function (card) {
-    var correct = parseInt(card.getAttribute('data-answer'), 10);
-    var opts = Array.prototype.slice.call(card.querySelectorAll('.qopt'));
-    var reveal = card.querySelector('.qreveal');
-    if (!opts.length || !reveal || isNaN(correct)) return;
-
-    opts.forEach(function (opt, i) {
-      opt.addEventListener('click', function () {
-        if (card.getAttribute('data-answered') === 'true') return;
-        card.setAttribute('data-answered', 'true');
-
-        opts.forEach(function (o, j) {
-          o.disabled = true;
-          o.setAttribute('data-state', j === correct ? 'right' : 'wrong');
-        });
-
-        reveal.setAttribute('data-open', 'true');
-
-        var bar = reveal.querySelector('.pbar span');
-        if (bar) {
-          // A timeout rather than requestAnimationFrame: rAF is throttled or
-          // skipped entirely in a background or non-compositing tab, which
-          // would leave the bar stuck at zero width instead of just unanimated.
-          setTimeout(function () {
-            bar.style.width = (bar.getAttribute('data-fill') || 0) + '%';
-          }, 40);
-        }
-      });
-    });
-  });
-
-  /* ---- Enquiry form ---------------------------------------------------
-     No server, so the form composes a mail message and hands it to the
-     visitor's own mail application. Nothing is stored or transmitted by
-     this page. To move to a hosted form handler later, replace the body
-     of the submit handler with a fetch() to the endpoint.            */
-  var form = document.getElementById('enquiry');
-  if (!form) return;
-
-  var status = form.querySelector('[data-form-status]');
-  var TO = 'prshenoy' + '@' + 'jyu.fi';
-  var MAX_CONCERN = 1400;
-
-  function say(msg) { if (status) status.textContent = msg; }
-
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-
-    var purpose = form.querySelector('input[name="purpose"]:checked');
-    var email = form.querySelector('#email');
-    var org = form.querySelector('#org');
-    var concern = form.querySelector('#concern');
-
-    if (!purpose) {
-      say('Pick the line that fits best first.');
-      var firstOpt = form.querySelector('input[name="purpose"]');
-      if (firstOpt) firstOpt.focus();
-      return;
-    }
-    if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      say('That email address does not look complete.');
-      email.focus();
-      return;
-    }
-
-    var text = (concern.value || '').trim();
-    var truncated = text.length > MAX_CONCERN;
-    if (truncated) text = text.slice(0, MAX_CONCERN) + '\n[...]';
-
-    var lines = [
-      'Purpose: ' + purpose.value,
-      'Organisation: ' + ((org.value || '').trim() || 'not given'),
-      'Reply to: ' + email.value.trim(),
-      '',
-      'The concern:',
-      text || 'not given',
-      '',
-      'Sent from prashanthshenoy.com'
-    ];
-
-    var href = 'mailto:' + TO +
-      '?subject=' + encodeURIComponent('Enquiry: ' + purpose.value) +
-      '&body=' + encodeURIComponent(lines.join('\n'));
-
-    window.location.href = href;
-
-    say(truncated
-      ? 'Your mail app should be opening. The note was long, so trim it there before sending.'
-      : 'Your mail app should be opening. Check it over, then send.');
   });
 })();
