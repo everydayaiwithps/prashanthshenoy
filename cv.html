@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum Vitae | Prashanth Shenoy</title>
+<meta name="description" content="Curriculum vitae of Prashanth Shenoy, doctoral researcher at the University of Jyväskylä: AI literacy for educators, AI governance in education, teacher AI adoption. Publications, frameworks, tools and funding.">
+<link rel="canonical" href="https://www.prashanthshenoy.com/cv.html">
+
+<!-- Machine-readable semantic version of this CV (OWL/RDF) -->
+<link rel="alternate" type="application/rdf+xml" title="CV ontology (OWL/RDF)" href="https://www.prashanthshenoy.com/cv-ontology.owl">
+<link rel="meta" type="application/rdf+xml" href="https://www.prashanthshenoy.com/cv-ontology.owl">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://www.prashanthshenoy.com/cv.html">
+<meta property="og:title" content="Prashanth Shenoy: Curriculum Vitae">
+<meta property="og:image" content="https://www.prashanthshenoy.com/assets/img/og-card.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='none' stroke='%230E5E56' stroke-width='2'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='600' fill='%230E5E56' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.prashanthshenoy.com/cv-ontology.owl#PrashanthShenoy",
+  "name": "Prashanth Shenoy",
+  "givenName": "Prashanth",
+  "familyName": "Shenoy",
+  "url": "https://www.prashanthshenoy.com/",
+  "image": "https://www.prashanthshenoy.com/assets/img/portrait.jpg",
+  "email": "mailto:prshenoy@jyu.fi",
+  "identifier": "https://orcid.org/0009-0000-4653-6191",
+  "sameAs": ["https://orcid.org/0009-0000-4653-6191", "https://www.jyu.fi/en/people/prashanth-shenoy"],
+  "jobTitle": "Doctoral Researcher",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Jyväskylä",
+    "sameAs": "http://dbpedia.org/resource/University_of_Jyväskylä"
+  },
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "University of Arizona", "sameAs": "http://dbpedia.org/resource/University_of_Arizona"},
+    {"@type": "CollegeOrUniversity", "name": "BMS College of Engineering", "sameAs": "http://dbpedia.org/resource/B.M.S._College_of_Engineering"}
+  ],
+  "knowsLanguage": ["en", "hi", "fi"],
+  "knowsAbout": ["AI literacy", "Generative AI in education", "Teacher professional development",
+                 "Technology Acceptance Model", "AI governance in education", "EU AI Act", "Learning analytics"],
+  "subjectOf": {"@type": "Dataset", "name": "CV ontology (OWL/RDF)", "url": "https://www.prashanthshenoy.com/cv-ontology.owl"}
+}
+</script>
+
+<style>
+  /* CV page components, built on the site's design tokens */
+  .cv-hero { padding-block: var(--sp-5) var(--sp-4); }
+  .cv-hero__grid { display: grid; gap: var(--sp-4); align-items: center; }
+  @media (min-width: 48rem) { .cv-hero__grid { grid-template-columns: 1fr 13rem; } }
+  .cv-hero h1 { font-size: var(--step-4); margin-bottom: var(--sp-2); }
+  .cv-hero__role { font-family: var(--font-display); font-size: var(--step-1); color: var(--ink-2); line-height: 1.45; max-width: 36rem; }
+  .cv-hero__portrait { width: 13rem; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--rule); justify-self: start; }
+  .cv-links { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-3); margin-top: var(--sp-3); font-size: var(--step--1); }
+
+  .cv-section { padding-block: var(--sp-5); border-top: 1px solid var(--rule); }
+  .cv-section > .wrap > h2 { font-size: var(--step-2); margin-bottom: var(--sp-3); }
+  .cv-section .eyebrow { display: block; margin-bottom: var(--sp-1); }
+  .cv-prose { max-width: 44rem; color: var(--ink-2); }
+
+  .cv-list { list-style: none; padding: 0; display: grid; gap: var(--sp-3); }
+  .cv-item { display: grid; gap: 0.15rem var(--sp-3); }
+  @media (min-width: 48rem) { .cv-item { grid-template-columns: 9rem 1fr; } }
+  .cv-item__when { font-size: var(--step--1); color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 0.15rem; }
+  .cv-item__what { font-weight: 600; }
+  .cv-item__where { color: var(--ink-2); }
+  .cv-item__note { color: var(--ink-3); font-size: var(--step--1); margin-top: 0.2rem; }
+
+  .pub-group { margin-top: var(--sp-4); }
+  .pub-group h3 { font-family: var(--font-body); font-size: var(--step--1); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--sp-2); }
+  .pubs { list-style: none; padding: 0; display: grid; gap: var(--sp-3); counter-reset: none; }
+  .pub { display: grid; grid-template-columns: 2.6rem 1fr; gap: var(--sp-2); padding: var(--sp-2) 0; border-bottom: 1px solid var(--rule); }
+  .pub:last-child { border-bottom: 0; }
+  .pub__id { font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-3); padding-top: 0.2rem; }
+  .pub__title { font-family: var(--font-display); font-size: var(--step-1); line-height: 1.3; color: var(--ink); }
+  .pub__meta { font-size: var(--step--1); color: var(--ink-2); margin-top: 0.3rem; }
+  .pub__links { font-size: var(--step--1); margin-top: 0.3rem; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .tag { display: inline-block; font-size: var(--step--2); font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--accent-wash); color: var(--accent); margin-left: 0.4rem; vertical-align: 0.1em; white-space: nowrap; }
+
+  .cv-cols { display: grid; gap: var(--sp-4); }
+  @media (min-width: 48rem) { .cv-cols { grid-template-columns: 1fr 1fr; } }
+  .cv-cols h3 { font-size: var(--step-1); margin-bottom: var(--sp-2); }
+  .plain { padding-left: 1.1rem; display: grid; gap: 0.35rem; color: var(--ink-2); }
+
+  .semantic { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--sp-4); display: grid; gap: var(--sp-2); }
+  .semantic code { font-family: var(--font-mono); font-size: 0.88em; background: var(--paper-3); padding: 0.05rem 0.35rem; border-radius: 2px; word-break: break-all; }
+  .semantic ul { padding-left: 1.1rem; display: grid; gap: 0.35rem; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="monogram" aria-hidden="true">PS</span>
+      <span class="brand__name">Prashanth Shenoy</span>
+    </a>
+    <div class="header-actions">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#evidence">Evidence</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="cv.html" aria-current="page">CV</a>
+        <a href="work-with-ps.html">Work with PS</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= IDENTITY ================= -->
+  <section class="cv-hero">
+    <div class="wrap">
+      <div class="cv-hero__grid">
+        <div>
+          <span class="eyebrow">Curriculum vitae</span>
+          <h1>Prashanth Shenoy</h1>
+          <p class="cv-hero__role">
+            Doctoral Researcher, Faculty of Information Technology, University of Jyväskylä, Finland.
+            HUMBLE research group (Human and Machine-Based Intelligence in Learning).
+          </p>
+          <div class="cv-links">
+            <a href="https://orcid.org/0009-0000-4653-6191">ORCID 0009-0000-4653-6191</a>
+            <a href="mailto:prshenoy@jyu.fi">prshenoy@jyu.fi</a>
+            <a href="https://www.jyu.fi/en/people/prashanth-shenoy">JYU profile</a>
+            <a href="cv-ontology.owl">This CV as OWL/RDF</a>
+          </div>
+        </div>
+        <img class="cv-hero__portrait" src="assets/img/portrait.jpg" alt="Portrait of Prashanth Shenoy" width="208" height="260">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section class="cv-section" id="research">
+    <div class="wrap">
+      <span class="eyebrow">Research</span>
+      <h2>AI literacy for educators</h2>
+      <div class="cv-prose stack">
+        <p>
+          Teachers are expected to use generative AI before anyone has agreed on what AI literacy for
+          educators should contain, or how a teacher would show they can judge an AI system's output.
+          My doctoral research, <em>Advancing AI Literacy for Educators: Framework Synthesis, Governance,
+          and Cross-National Empirical Validation</em> (defence planned for November 2027, supervisor
+          Associate Professor Mirka Saarela), works through that problem in four steps.
+        </p>
+        <p>
+          An umbrella review of AI literacy frameworks (P2) found fragmented foundations, almost no
+          standardised assessment and little attention to explainability. Those gaps shaped the
+          <strong>GenAI-TPD framework</strong> (P1): five competency domains across four developmental
+          stages, with Critical Evaluation as a distinct competency because generative AI produces
+          fluent, confident and sometimes wrong output. A policy mapping of India's national initiatives
+          against UNESCO and OECD standards (P3) and an analysis of the EU AI Act (P4) place the framework
+          in its governance context. Field studies with teachers in Bengaluru (P5, P6, P10) measure
+          adoption intention and readiness.
+        </p>
+        <p>
+          The next step moves from self-report to performance. A planned 2027 study with about 300 teachers
+          at IIT Bombay will use a seeded-error instrument to test whether educators can actually detect and
+          evaluate errors in AI-generated content.
+        </p>
+        <p class="muted">
+          Twelve research outputs to date, ten as first author. Research carried out in association with
+          Research Council of Finland project no. 356314.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section class="cv-section" id="publications">
+    <div class="wrap">
+      <span class="eyebrow">Publications</span>
+      <h2>Research outputs</h2>
+
+      <div class="pub-group">
+        <h3>Published</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__id">P1</span>
+            <div>
+              <div class="pub__title">A critical review and actionable framework for integrating generative AI into teacher professional development</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. (2026). <em>Discover Education</em>, 5, 570. Springer Nature. Open access (CC BY 4.0).</div>
+              <div class="pub__links"><a href="https://doi.org/10.1007/s44217-026-01579-7">doi:10.1007/s44217-026-01579-7</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P2</span>
+            <div>
+              <div class="pub__title">AI literacy frameworks for educators: An umbrella review</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. (2026). In <em>Proceedings of the 59th Hawaii International Conference on System Sciences (HICSS-59)</em>, pp. 44 to 53.</div>
+              <div class="pub__links"><a href="https://hdl.handle.net/10125/111399">hdl:10125/111399</a><a href="https://jyx.jyu.fi/handle/123456789/108266">JYX repository</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P3</span>
+            <div>
+              <div class="pub__title">AI literacy and governance in Indian education: Mapping policy approaches and institutional initiatives</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. (2026). In <em>2026 International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA)</em>, Philippines. IEEE.</div>
+              <div class="pub__links"><a href="https://doi.org/10.1109/ACDSA67686.2026.11467788">doi:10.1109/ACDSA67686.2026.11467788</a><a href="research/ai-literacy-governance-indian-education-policy.html">Study summary</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P4</span>
+            <div>
+              <div class="pub__title">From post-hoc regulation to runtime governance: Ethics and explainability in AI-driven education</div>
+              <div class="pub__meta">Saarela, M., &amp; Shenoy, P. (2026). In <em>8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications (ICHORA 2026)</em>. IEEE.<span class="tag">2nd author</span></div>
+              <div class="pub__links"><a href="research/eu-ai-act-runtime-governance-education.html">Study summary</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P8</span>
+            <div>
+              <div class="pub__title">Explaining teacher adoption of AI through the Technology Acceptance Model: A meta-analysis and systematic review</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. (2026). <em>Artificial Intelligence Review</em>. Springer Nature. 38 studies, 15,919 teachers, 19 countries; proposes TAM-I, an identity and epistemics extension of TAM.</div>
+              <div class="pub__links"><a href="https://doi.org/10.1007/s10462-026-11736-x">doi:10.1007/s10462-026-11736-x</a><a href="research/teacher-ai-adoption-tam-meta-analysis.html">Study summary</a></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-group">
+        <h3>Accepted, in press</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__id">P5</span>
+            <div>
+              <div class="pub__title">Generative AI usability in teacher training: A Technology Acceptance Model study from India</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>IEEE ICECCME 2026</em>, Bali, Indonesia.</div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P6</span>
+            <div>
+              <div class="pub__title">Lowering the barrier: A quantitative analysis of generative AI accessibility for teachers in India. Diagnosing readiness before designing training</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>IEEE ICETC 2026</em>, Porto, Portugal.</div>
+              <div class="pub__links"><a href="research/diagnosing-teacher-ai-readiness-before-training.html">Study summary</a></div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P10</span>
+            <div>
+              <div class="pub__title">Advancing AI literacy among educators in the Global South: Evidence from a generative AI intervention in India</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>IEEE ACDSA 2027</em>, Rio de Janeiro, Brazil.</div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P11</span>
+            <div>
+              <div class="pub__title">Contingent scaffolding in commercial AI tutors: Establishing a baseline for agentic designs</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>IEEE ACDSA 2027</em>, Rio de Janeiro, Brazil.</div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P12</span>
+            <div>
+              <div class="pub__title">Human-AI division and collaboration in secondary L2 writing instruction: From classroom design to learning analytics</div>
+              <div class="pub__meta">With M. Saarela and co-authors. <em>IEEE ICETC 2026</em>, Porto, Portugal.<span class="tag">2nd author</span></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pub-group">
+        <h3>Under review</h3>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__id">P7</span>
+            <div>
+              <div class="pub__title">AI credentials in computing education: A scoping review of curricular transformation, competencies, ethics, and evidence</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>ACM Transactions on Computing Education</em>. Revise and resubmit.</div>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__id">P9</span>
+            <div>
+              <div class="pub__title">Supporting critical human-AI interaction without reducing adoption: A two-site study of teacher professional development with generative AI</div>
+              <div class="pub__meta">Shenoy, P., &amp; Saarela, M. <em>PeerJ Computer Science</em>. Data and code: <a href="https://doi.org/10.17632/46tjrp4wc9.2">doi:10.17632/46tjrp4wc9.2</a> (Mendeley Data).</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTRIBUTIONS ================= -->
+  <section class="cv-section" id="contributions">
+    <div class="wrap">
+      <span class="eyebrow">Frameworks, instruments and tools</span>
+      <h2>What the research has produced</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="cv-item__when">Framework</span>
+          <div><div class="cv-item__what">GenAI-TPD</div>
+            <div class="cv-item__where">Five competency domains across four developmental stages for generative AI in teacher professional development, stated as testable propositions (P1).</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">Theory</span>
+          <div><div class="cv-item__what">TAM-I</div>
+            <div class="cv-item__where">An identity and epistemics extension of the Technology Acceptance Model for AI adoption (P8).</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">Instrument</span>
+          <div><div class="cv-item__what">Seeded-error assessment</div>
+            <div class="cv-item__where">Performance-based measure of teachers' critical evaluation of AI-generated content. In validation.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">Tool</span>
+          <div><div class="cv-item__what"><a href="https://aittt.app">aittt.app (AIT3)</a></div>
+            <div class="cv-item__where">AI literacy toolkit and readiness diagnostic for teacher trainers.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">Product</span>
+          <div><div class="cv-item__what"><a href="https://oppija.com">Oppija AI</a></div>
+            <div class="cv-item__where">Teacher-support AI in development for Finnish and Indian schools.</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= FUNDING ================= -->
+  <section class="cv-section" id="funding">
+    <div class="wrap">
+      <span class="eyebrow">Funding</span>
+      <h2>Grants and projects</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="cv-item__when">2026</span>
+          <div><div class="cv-item__what">EduJyväskylä Product Development Funding</div>
+            <div class="cv-item__where">Awarded for Oppija AI. Funds a prototype that will build a dataset on teachers' non-instructional workload and on the gains and challenges of AI literacy in practice.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2025 to present</span>
+          <div><div class="cv-item__what">Funded doctoral researcher position</div>
+            <div class="cv-item__where">Faculty of Information Technology, University of Jyväskylä. Research in association with Research Council of Finland project no. 356314 (PI: Mirka Saarela).</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2027</span>
+          <div><div class="cv-item__what">Planned research visit, IIT Bombay</div>
+            <div class="cv-item__where">Performance-based study of about 300 teachers' ability to detect and evaluate errors in AI-generated content.</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION + TEACHING ================= -->
+  <section class="cv-section" id="education">
+    <div class="wrap">
+      <span class="eyebrow">Education and teaching</span>
+      <h2>Degrees, qualifications and teaching</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="cv-item__when">2025 to 2027</span>
+          <div><div class="cv-item__what">PhD, Information Technology (in progress)</div>
+            <div class="cv-item__where">University of Jyväskylä, Finland. Supervisor: Mirka Saarela.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2024</span>
+          <div><div class="cv-item__what">MS, Information Sciences (Machine Learning)</div>
+            <div class="cv-item__where">University of Arizona, Tucson, USA.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2000</span>
+          <div><div class="cv-item__what">Bachelor of Engineering</div>
+            <div class="cv-item__where">BMS College of Engineering, Bengaluru, India.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2021 · 2015</span>
+          <div><div class="cv-item__what">Advanced Diploma in Leadership and Coaching · Cambridge CELTA</div>
+            <div class="cv-item__where">Kingstown College, Dublin · Cambridge Assessment English.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2025 to present</span>
+          <div><div class="cv-item__what">Co-facilitator, "Facilitating and Assessing Learners' Digital Competencies"</div>
+            <div class="cv-item__where">Master's module delivered jointly by the University of Jyväskylä and Universidade Aberta, Portugal.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">Current</span>
+          <div><div class="cv-item__what">Co-instructor, TIES4600 Machine Learning</div>
+            <div class="cv-item__where">University of Jyväskylä, Faculty of Information Technology.</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= PRIOR INDUSTRY ================= -->
+  <section class="cv-section" id="industry">
+    <div class="wrap">
+      <span class="eyebrow">Before academia</span>
+      <h2>Prior industry experience</h2>
+      <ul class="cv-list">
+        <li class="cv-item">
+          <span class="cv-item__when">2018 to 2024</span>
+          <div><div class="cv-item__what">Senior Learning and Development Professional, PayPal, Bengaluru</div>
+            <div class="cv-item__where">Global learning programmes; ML-informed learning personalisation and learner analytics. Finalist (top 3), PayPal Global Innovation Tournament 2022.</div></div>
+        </li>
+        <li class="cv-item">
+          <span class="cv-item__when">2007 to 2018</span>
+          <div><div class="cv-item__what">Learning and development leadership, EduTel and AES, Bengaluru</div>
+            <div class="cv-item__where">Including co-leading a Government of Karnataka tele-education action research programme for educators and rural students.</div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="cv-section" id="skills">
+    <div class="wrap">
+      <span class="eyebrow">Skills</span>
+      <h2>Methods, tools and languages</h2>
+      <div class="cv-cols">
+        <div>
+          <h3>Research methods</h3>
+          <ul class="plain">
+            <li>Meta-analysis; systematic, scoping and umbrella reviews (PRISMA)</li>
+            <li>Structural equation modelling; pre/post intervention surveys</li>
+            <li>Thematic analysis with inter-rater reliability (Cohen's κ)</li>
+            <li>Policy document analysis and benchmarking</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Technical and languages</h3>
+          <ul class="plain">
+            <li>Python, TensorFlow, scikit-learn, LaTeX</li>
+            <li>English (C2), Hindi (B2), Finnish (A1, in active development)</li>
+            <li>Business Toys Innovation Award, IIT Madras (2016)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEMANTIC VERSION ================= -->
+  <section class="cv-section" id="semantic">
+    <div class="wrap">
+      <span class="eyebrow">Linked data</span>
+      <h2>This CV, machine-readable</h2>
+      <div class="semantic">
+        <p>
+          Everything on this page is also published as an OWL 2 ontology with RDF annotations, so software
+          agents can read, query and reason over it. Each person, organisation, place, publication, topic and
+          skill has its own URI and, where one exists, an <code>owl:sameAs</code> link to DBpedia.
+        </p>
+        <ul>
+          <li>Ontology: <a href="cv-ontology.owl"><code>https://www.prashanthshenoy.com/cv-ontology.owl</code></a></li>
+          <li>DBpedia import (SPARQL CONSTRUCT): <a href="cv-dbpedia-import.owl"><code>https://www.prashanthshenoy.com/cv-dbpedia-import.owl</code></a></li>
+          <li>The person described: <code>https://www.prashanthshenoy.com/cv-ontology.owl#PrashanthShenoy</code></li>
+        </ul>
+        <p class="muted">Built for ITKS5440 Semantic Web and Linked Data, University of Jyväskylä, autumn 2026.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__grid">
+    <p>
+      &copy; <span class="num">2026</span> Prashanth Shenoy. CV updated 7 November 2026.
+      Research supported by the Research Council of Finland (project no. 356314).
+    </p>
+    <div class="site-footer__links">
+      <a href="work-with-ps.html">Work with PS</a>
+      <a href="https://orcid.org/0009-0000-4653-6191">ORCID</a>
+      <a href="mailto:prshenoy@jyu.fi">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
