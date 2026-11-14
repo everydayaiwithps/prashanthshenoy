@@ -1,0 +1,38 @@
+# Q1 Publications by status and venue
+PREFIX cv: <https://www.prashanthshenoy.com/cv-ontology.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?id ?status ?venue
+FROM <https://www.prashanthshenoy.com/cv-ontology.owl>
+FROM <https://www.prashanthshenoy.com/cv-dbpedia-import.owl>
+WHERE {
+  cv:PrashanthShenoy cv:authored ?p . ?p cv:hasStatus ?s . ?s rdfs:label ?status .
+  OPTIONAL { ?p cv:publishedIn|cv:presentedAt ?v . ?v rdfs:label ?venue }
+  BIND(STRAFTER(STR(?p),"#") AS ?id) } ORDER BY ?status ?id
+
+# Q2 Organisations linked to DBpedia, with their DBpedia city
+PREFIX cv: <https://www.prashanthshenoy.com/cv-ontology.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT DISTINCT ?org ?dbpedia ?city
+FROM <https://www.prashanthshenoy.com/cv-ontology.owl>
+FROM <https://www.prashanthshenoy.com/cv-dbpedia-import.owl>
+WHERE {
+  ?o a/rdfs:subClassOf* cv:Organization ; rdfs:label ?org ; owl:sameAs|^owl:sameAs ?dbpedia .
+  FILTER(STRSTARTS(STR(?dbpedia),"http://dbpedia.org/"))
+  OPTIONAL { ?dbpedia dbo:city ?c . ?c rdfs:label ?city FILTER(LANG(?city)="en") }
+  FILTER(LANG(?org)="en") } ORDER BY ?org
+
+# Q3 Places worked in, with DBpedia population
+PREFIX cv: <https://www.prashanthshenoy.com/cv-ontology.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?job ?city ?pop
+FROM <https://www.prashanthshenoy.com/cv-ontology.owl>
+FROM <https://www.prashanthshenoy.com/cv-dbpedia-import.owl>
+WHERE {
+  cv:PrashanthShenoy cv:hasEmployment ?e . ?e cv:jobTitle ?job ; cv:workLocation ?l .
+  ?l rdfs:label ?city ; owl:sameAs|^owl:sameAs ?d . OPTIONAL { ?d dbo:populationTotal ?pop } }
